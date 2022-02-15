@@ -1,24 +1,51 @@
-1. Создал такой unit-файл:
-![](screenshots/node_exporter_unit_file.png).
-Кажется, работает:
-![](screenshots/node_exporter_ps_output.png)
-При обращении вижу примерно следующее:
-![](screenshots/node_exporter_url.png)
+1. -
 
-2. Для базового мониторинга предлагаю следующие опции (пишу без ```--collector.``` для экономии): cpu, cpufreq, diskstats, filesystem, infiniband, ipvs, loadavg, meminfo, netclass, netdev, netstat.
+2. Учитывая тот факт, что в Linux уникальным идентификатором файла является не его имя, а inode, файлы, являющиеся жесткой ссылкой на один объект, не могут иметь разные права доступа и владельца, т.к. у них один inode на всех.
 
-3. Сделал всё по инструкции. Вижу это:
-![](screenshots/netdata.png)
+3. -
 
-4. Можно распознать факт загрузки ОС на системе виртуализации с помощью следующей команды: ```dmesg | grep "Hypervisor"```. Видим:
-![](screenshots/is_virtual.png)
+4. Разбил:
+![](screenshots/fdisk_first_partition.png)
 
-5. Этот параметр отражает максимальное количество файловых дескрипторов, которое может быть выделено процессу. Его значение по умолчанию:
-![](screenshots/fs_nr_open.png). Другой существующий лимит, который не позволит достичь такого числа, - это максимальное количество открытых файлов, установленное для оболочки и процессов:
-![](screenshots/ulimit.png)
+5. Использовал команду ```sfdisk -d /dev/sdb | sfdisk /dev/sdc```. Получил:
+![](screenshots/fdisk_second_partition.png)
 
-6. Сделал по инструкции. Вижу следующее:
-![](screenshots/nsenter.png)
+6. -
 
-7. Это пример форк-бомбы. Мы определяем функцию под названием ```:```. В теле функции мы вызываем её же и ей же перенаправляем вывод через пайп, помещая запускаемые процессы в бэкграунд (```{ :|:& }```). ```;``` - завершение определения функции, ```:``` в конце - вызов данной функции. Предотвращение форк-бомб осуществляется через механизм ограничения количества процессов, которыми может владеть пользователь, посредством команды ```ulimit``` (только для текущей сессии), либо через редактирование файла /etc/security/limits.conf. По умолчанию, максимальное количество процессов:
-![](screenshots/fork_bomb.png)
+7. Собрал:
+![](screenshots/mdadm.png)
+
+8. -
+
+9. Создал:
+![](screenshots/vg_created.png)
+
+10. Создал:
+![](screenshots/lv_created.png)
+
+11. Создал:
+![](screenshots/ext4_created.png)
+
+12. Смонтировал:
+![](screenshots/mounted.png)
+
+13. Файл поместил:
+![](screenshots/test_file_downloaded.png)
+
+14. Вывод ```lsblk```:
+![](screenshots/lsblk_output.png)
+
+15. Целостность файла проверил:
+![](screenshots/file_is_ok.png)
+
+16. Переместил:
+![](screenshots/moved_from_md1_to_md0.png)
+
+17. Сделал:
+![](screenshots/fail_on_raid1.png)
+
+18. Вывод ```dmesg```:
+![](screenshots/dmesg_output.png)
+
+19. Протестировал:
+![](screenshots/file_test.png)
