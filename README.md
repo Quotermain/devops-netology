@@ -1,51 +1,21 @@
-1. -
+1. В ответе возвращается код **301**, свидетельствующий о перемещении запрашиваемого ресурса. Новый адрес указан в поле **location**.
 
-2. Учитывая тот факт, что в Linux уникальным идентификатором файла является не его имя, а inode, файлы, являющиеся жесткой ссылкой на один объект, не могут иметь разные права доступа и владельца, т.к. у них один inode на всех.
+2. Полученный http код: **200**. Я так понимаю, дольше всего обрабатывался запрос сценарию **beacon.js**.
+![](screenshots/browser_console.png)
 
-3. -
+3. В соответствии с сайтом **https://whatismyipaddress.com/** мой ip адрес:
+![](screenshots/my_ip.png).
 
-4. Разбил:
-![](screenshots/fdisk_first_partition.png)
+4. Провайдер: OJSC Mobile TeleSystems. Автономная система: AS43148 MTS PJSC.
 
-5. Использовал команду ```sfdisk -d /dev/sdb | sfdisk /dev/sdc```. Получил:
-![](screenshots/fdisk_second_partition.png)
+5. Сети, через которые проходит пакет: p2p-net-195-34-36, p2p-net-188-2, p2p-net-188-42, p2p-net-188-29, RU-MTU-960801, GOOGLE. AS, через которые проходит пакет: MTS(AS8359), GOOGLE(AS15169).
 
-6. -
+6. Как я понял из скриншота, худший результат на 12м хосте, т.к. среднее значение пинга наибольшее:
+![](screenshots/google_latency.png)
 
-7. Собрал:
-![](screenshots/mdadm.png)
+7. Адреса DNS серверов: 8.8.8.8, 8.8.4.4.
+![](screenshots/google_dns_.png)
 
-8. -
-
-9. Создал:
-![](screenshots/vg_created.png)
-
-10. Создал:
-![](screenshots/lv_created.png)
-
-11. Создал:
-![](screenshots/ext4_created.png)
-
-12. Смонтировал:
-![](screenshots/mounted.png)
-
-13. Файл поместил:
-![](screenshots/test_file_downloaded.png)
-
-14. Вывод ```lsblk```:
-![](screenshots/lsblk_output.png)
-
-15. Целостность файла проверил:
-![](screenshots/file_is_ok.png)
-
-16. Переместил:
-![](screenshots/moved_from_md1_to_md0.png)
-
-17. Сделал:
-![](screenshots/fail_on_raid1.png)
-
-18. Вывод ```dmesg```:
-![](screenshots/dmesg_output.png)
-
-19. Протестировал:
-![](screenshots/file_test.png)
+8. Доменное имя: dns.google
+![](screenshots/dns_check_1.png)
+![](screenshots/dns_check_2.png)
