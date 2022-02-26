@@ -1,20 +1,17 @@
-1. Увидеть сетевые интерфейсы в Linux можно с помощью команды ```ip link```:
-![](screenshots/network_interfaces.png). В Windows поможет команда ```ipconfig```:
-![](screenshots/ni_windows.png)
+1. Выполнил по иструкции. Вижу следующее:
+![](screenshots/public_router.png)
 
-2. Используется протокол ARP. Для применения соответствующего функционала можно использовать пакет Net-tools и команды ```arp``` или ```ip neigh```.
+2. Добавил интерфейс с ip 1.1.1.0/24:
+![](screenshots/dummy.png)
 
-3. Речь о технологии VLAN (Virtual Local Area Network). В Linux для данной задачи можно использовать пакет Net-tools и семейство команд ip. Для создания конфига пришлось создать следующий файл:
-![](screenshots/net_config.png).
-После команды ```sudo ifconfig eth0.100 up``` вижу следующее:
-![](screenshots/interfaces.png)
+3. Для просмотра открытых TCP портов можно использовать, например, команду ```sudo netstat -tulpn | grep LISTEN```:
+![](screenshots/opened_ports.png)
+Например, порт 3306 использует протокол IPv6 и приложение mysqld:
+![](screenshots/mysqld.png).
 
-4. Есть 7 типов агрегации интерфейсов: Balance Round Robin, Active backup, Balance XOR, Broadcast, 802.3ad, Balance TLB, Balance ALB. Для балансировки нагрузки используются две основные технологии: Keepalived и HAProxy.
-Пример конфига:
-![](screenshots/bonding.png)
+4. Проверить используемые UDP сокеты можно командой ```ss -l -u -e -p -4```:
+![](screenshots/used_UDP_sockets.png)
+Данная команда выводит UDP сокеты, использующие только протокол IPv4. Среди используемых приложений присутствует браузер chrome.
 
-5. В сети с маской /29 6 IP адресов, которые можно использовать. Из сети с маской /24 можно получить 32 подсети с маской /29. Примеры: 10.10.10.8, 10.10.10.16, 10.10.10.24.
-
-6.  Частные IP адреса допустимо взять, например, из подсети 100.64.0.64.
-
-7. Для просмотра ARP таблицы можно использоать команду```arp -a```. Для очистки ARP кеша используется  ```ip neigh flush all```. Для удаления из кеша одного адреса: ```arp -d <host>```. 
+5. Примерно так:
+![](screenshots/net.drawio.png)
