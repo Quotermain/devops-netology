@@ -15,3 +15,6 @@
 
 6. Для доступа к серверу через его имя создал файл ~/.ssh/config следующего содержания:
 ![](screenshots/ssh_by_servername.png). Доступ осуществлял командой ```ssh vagrant_host```.
+
+7. Сформировал дамп командой ```sudo tcpdump -w homework.pcap -c100```. После открытия данного файла в Wireshark вижу примерно следующее:
+![](screenshots/wireshark.png)
