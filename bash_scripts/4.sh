@@ -11,6 +11,11 @@ do
 	do
 		echo Attempt $i >> log
 		nc -vz -w 1 $ip 80 >> log 2>&1
+		if (($? != 0))
+		then
+			echo $ip >> error
+    			break 2
+		fi
 	done
 	echo >> log
 done
