@@ -23,3 +23,19 @@
 
 8. Результат обращения к странице:
 ![](screenshots/nginx_result.png)
+
+9. Скрипт выглядит следующим образом:
+```shellscript
+#!/bin/bash
+date
+vault write -format=json pki_int/issue/example-dot-com common_name="test.example.com" ttl="720">website.crt
+cat website.crt | jq -r .data.certificate>website.crt.pem
+cat website.crt | jq -r .data.ca_chain[]>>website.crt.pem
+cat website.crt | jq -r .data.private_key>website.key
+sudo systemctl restart nginx && echo "Certificate is generated"
+echo
+```
+10. В целях демонтрации расписание crontab следующее:
+![](screenshots/cron_generate_cert.png). Пример вывода файла **generate_cert.log**:
+![](screenshots/cron_log_example.png).
+Для выполнения cron job каждый месяц расписание должно быть примерно таким: **10 12 15 * * /home/vagrant/generate_cert.sh>>/home/vagrant/generate_cert.log 2>&1** (15го числа каждого месяца в 12:10).
