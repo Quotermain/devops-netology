@@ -1,6 +1,9 @@
 1. В описании ДЗ предлагается сделать скриншот аналогично слайду 37, но на данном слайде работа с ansible, поэтому прикладываю скриншоты по примеру слайдов 31 и 32:
-![](/screenshots/yc_centos_cli.png)   
-![](screenshots/yc_centos_ui.png)
+![](/screenshots/yc_centos_cli_1.png)   
+![](screenshots/yc_centos_gui.png)
 
 2. Прилагаю скриншот с параметрами созданной ВМ:   
-![](screenshots/vm_yc.png)
+![](screenshots/yc_vm.png)   
+
+3. Прилагаю скриншот мониторинга:   
+![](screenshots/yc_cloud_monitor.png)
