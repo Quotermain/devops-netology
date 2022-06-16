@@ -1,1 +1,1 @@
-[Проверка ссылки](docker-compose.yml)
+1. Прилагаю ссылку на [docker-compose манифест](docker-compose.yml).
