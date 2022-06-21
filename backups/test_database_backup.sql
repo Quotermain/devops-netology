@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 13.0 (Debian 13.0-1.pgdg100+1)
--- Dumped by pg_dump version 13.0 (Debian 13.0-1.pgdg100+1)
+-- Dumped from database version 13.7 (Debian 13.7-1.pgdg110+1)
+-- Dumped by pg_dump version 13.7 (Debian 13.7-1.pgdg110+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -32,6 +32,32 @@ CREATE TABLE public.orders (
 
 
 ALTER TABLE public.orders OWNER TO postgres;
+
+--
+-- Name: orders_1; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.orders_1 (
+    id integer,
+    title character varying(80),
+    price integer
+);
+
+
+ALTER TABLE public.orders_1 OWNER TO postgres;
+
+--
+-- Name: orders_2; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.orders_2 (
+    id integer,
+    title character varying(80),
+    price integer
+);
+
+
+ALTER TABLE public.orders_2 OWNER TO postgres;
 
 --
 -- Name: orders_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -79,6 +105,30 @@ COPY public.orders (id, title, price) FROM stdin;
 
 
 --
+-- Data for Name: orders_1; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.orders_1 (id, title, price) FROM stdin;
+2	My little database	500
+6	WAL never lies	900
+8	Dbiezdmin	501
+\.
+
+
+--
+-- Data for Name: orders_2; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.orders_2 (id, title, price) FROM stdin;
+1	War and peace	100
+3	Adventure psql time	300
+4	Server gravity falls	300
+5	Log gossips	123
+7	Me and my bash-pet	499
+\.
+
+
+--
 -- Name: orders_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -96,3 +146,4 @@ ALTER TABLE ONLY public.orders
 --
 -- PostgreSQL database dump complete
 --
+
