@@ -6,11 +6,12 @@ provider "yandex" {
 }
 
 resource "yandex_compute_instance" "default" {
-  name        = "test"
+  for_each = local.instance_count_map[terraform.workspace]
+  name        = each.value
   platform_id = "standard-v1"
   zone        = "ru-central1-a"
 
-  count = local.instance_count_map[terraform.workspace]
+  #count = local.instance_count_map[terraform.workspace]
 
   resources {
     cores  = 2
@@ -25,6 +26,7 @@ resource "yandex_compute_instance" "default" {
 
   network_interface {
     subnet_id = "${yandex_vpc_subnet.foo.id}"
+    nat = true
   }
 
   metadata = {
@@ -52,7 +54,14 @@ variable "YC_TOKEN" {
 
 locals {
   instance_count_map = {
-    stage = 1
-    prod = 2
+    stage = {
+      "vm1" = "test1"
+      "vm2" = "test2"
+    }
+    prod = {
+      "vm1" = "test1"
+      "vm2" = "test2"
+      "vm3" = "test3"
+    }
   }
 }
