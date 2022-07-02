@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+
+
+  netology_test:
+    image: elasticsearch-custom
+    container_name: netology_test
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+      - .path:/var/lib
+
+    ports:
+      - 9200:9200
+      - 9300:9300
+
+volumes:
+  elasticsearch-data:
+    driver: local
