@@ -1,4 +1,4 @@
-1. Docker-файл выглядит [так](Dockerfile). Файл для Docker compose выглядит [так](elasticsearch.yml). Образ находится по [ссылке](https://hub.docker.com/repository/docker/quotermain/elastic-netology). Ответ elasticsearch на запрос пути / в json виде выглядит [так](output.json).   
+1. Docker-файл выглядит [так](Dockerfile). Файл для Docker compose выглядит [так](docker-compose.yml). Образ находится по [ссылке](https://hub.docker.com/repository/docker/quotermain/elastic-netology). Ответ elasticsearch на запрос пути / в json виде выглядит [так](output.json).   
 
 2. Состояние кластера:   
 ![](screenshots/cluster_state.png)   
