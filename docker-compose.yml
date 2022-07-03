@@ -1,18 +1,33 @@
-version: '3.1'
+version: '3.7'
 
 services:
 
-  db:
-    image: postgres:13
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: example
-    volumes:
-      - ./data:/var/lib/postgresql/data
-      - ./backups:/backups
 
-  adminer:
-    image: adminer
-    restart: always
+  netology_test:
+    image: elasticsearch-custom
+    container_name: netology_test
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+      - .elastic-backup:/usr/share/elasticsearch/snapshots
+      - /var/lib/elasticsearch:/var/lib/elasticsearch
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+
     ports:
-      - 8080:8080
+      - 9200:9200
+      - 9300:9300
+
+volumes:
+  elasticsearch-data:
