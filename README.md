@@ -1,18 +1,27 @@
-1. Docker-файл выглядит [так](Dockerfile). Файл для Docker compose выглядит [так](docker-compose.yml). Образ находится по [ссылке](https://hub.docker.com/repository/docker/quotermain/elastic-netology). Ответ elasticsearch на запрос пути / в json виде выглядит [так](output.json).   
+1. При запуске команды ```ansible-playbook site.yml -i inventory/test.yml``` вижу следующее:   
+![](screenshots/1.png)   
 
-2. Состояние кластера:   
-![](screenshots/cluster_state.png)   
-Состояние yellow обусловлено тем, что количество реплик у некоторых индексов превышает количество узлов в кластере, что препятствует распределению реплик по кластеру для обеспечения отказоустойчивости.   
+2. После изменения файла **group_vars/all/examp.yml** вижу следующее:   
+![](screenshots/2.png)   
 
-3. Запрос для регистрации директории как snapshot repository и ответ на него выглядят так:   
-![](screenshots/create_backup_repo.png). Файл json для запроса выглядит [так](create_backup.json).   
-Список индексов после создания индекса test:   
-![](screenshots/indexes_after_test_creation.png)   
-Список файлов в директории со snapshotами:   
-![](screenshots/first_snap.png)   
-Список индексов после удаления test и создания test-2:   
-![](screenshots/test_2_index.png).   
-Запрос для восстановления индекса:   
-![](screenshots/index_restored.png)   
-Итоговое состояние кластера:   
-![](screenshots/list_of_indices.png)
+3. Пользовался готовым окружением docker.   
+
+4. После запуска вижу следующее:   
+![](screenshots/4.png)   
+
+5. Внёс изменения в group_vars/deb/examp.yml и group_vars/el/examp.yml.
+
+6. После изменений вижу следующее:   
+![](screenshots/6.png)
+
+7. Факты зашифровал.
+
+8. После запуска вижу следующее:   
+![](screenshots/7-8.png)
+
+9. Думаю, подходящим плагином будет community.docker.docker_container.
+
+10. После изменения файл выглядит [так](playbook/inventory/prod.yml).   
+
+11. После запуска вижу следующее:   
+![](screenshots/11.png)
