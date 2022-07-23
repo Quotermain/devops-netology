@@ -1,0 +1,8 @@
+- name: Mt first play
+  hosts: elasticsearch
+  tasks:
+    - name: Ping my hosts
+      ansible.builtin.ping:
+    - name: print message
+      ansible.builtin.debug:
+        msg: Hello world
