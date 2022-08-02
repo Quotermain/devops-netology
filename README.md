@@ -18,3 +18,6 @@ Java роль скачана успешно:
 ![](screenshots/kibana_centos7.png)   
 
 ![](screenshots/kibana_ubuntu.png)
+
+Переработанный плэйбук выглядит [так](playbook/site.yml). Фрагмент прогона:   
+![](screenshots/final_run.png)
