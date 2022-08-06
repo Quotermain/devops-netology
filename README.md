@@ -1,23 +1,6 @@
-Java роль скачана успешно:   
-![](screenshots/java_role_downloaded.png)   
-Однако при попытке запуска ```molecule test``` получал примерно следующее:   
-![](screenshots/error_without_namespace.png)   
-Добавил в файл meta/main.yml с ролью java строку с произвольным namespace и role_name: java. Вижу следующее:   
-![](screenshots/java_done.png)   
-Переработал role для elasticsearch, чтобы файл загружался на целевой узел с контролирующего узла (по предложенной в задании ссылке получаю 403).   
-Результаты прогона:   
-![](screenshots/elastic_ubuntu.png)
+QG пройдены:   
+![](screenshots/QG_passed.png)
 
-![](screenshots/elastic_centos7.png)
+Файл [maven-metadata.xml](maven-metadata.xml).
 
-![](screenshots/elastic_centos8.png)   
-
-С Кибаной тоже всё получилось:   
-![](screenshots/kibana_centos8.png)
-
-![](screenshots/kibana_centos7.png)   
-
-![](screenshots/kibana_ubuntu.png)
-
-Переработанный плэйбук выглядит [так](playbook/site.yml). Фрагмент прогона:   
-![](screenshots/final_run.png)
+Исправленный [pom.xml](mvn/pom.xml)

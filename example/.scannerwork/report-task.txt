@@ -1,0 +1,6 @@
+projectKey=devops_netology
+serverUrl=http://localhost:9000
+serverVersion=8.7.1.42226
+dashboardUrl=http://localhost:9000/dashboard?id=devops_netology
+ceTaskId=AYJu-y5HiAIB3c0aRsDp
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYJu-y5HiAIB3c0aRsDp
