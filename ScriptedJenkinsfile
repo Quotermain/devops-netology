@@ -1,4 +1,4 @@
-node("ansible_docker"){
+node {
     stage("Git checkout"){
         git credentialsId: '856bea26-b95b-453b-8c11-1fbddb119645', url: 'git@github.com:aragastmatb/example-playbook.git'
     }
