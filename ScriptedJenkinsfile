@@ -1,6 +1,6 @@
 node {
     stage("Git checkout"){
-        git credentialsId: '856bea26-b95b-453b-8c11-1fbddb119645', url: 'git@github.com:aragastmatb/example-playbook.git'
+        git credentialsId: '045dc49d-6a31-4bc3-b765-7e4fb0ce74f9', url: 'git@github.com:aragastmatb/example-playbook.git'
     }
     stage("Check ssh key"){
         secret_check=true
